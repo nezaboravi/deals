@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Laravel Deals Hero Illustration</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF8A00" offset="0%"></stop>
+            <stop stop-color="#FF2D20" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F5F5F5" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-8.6%" y="-8.6%" width="117.2%" height="117.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Laravel-Deals-Hero" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Background Elements -->
+        <circle id="Circle-1" fill="#FF8A00" opacity="0.1" cx="650" cy="100" r="80"></circle>
+        <circle id="Circle-2" fill="#FF2D20" opacity="0.1" cx="150" cy="400" r="60"></circle>
+        <circle id="Circle-3" fill="#FF8A00" opacity="0.1" cx="400" cy="450" r="40"></circle>
+        
+        <!-- Main Deal Card -->
+        <g id="Deal-Card" transform="translate(250, 100)" filter="url(#filter-3)">
+            <rect id="Card-Background" fill="url(#linearGradient-2)" x="0" y="0" width="300" height="300" rx="12"></rect>
+            
+            <!-- Card Header -->
+            <rect id="Card-Header" fill="#FFFFFF" x="0" y="0" width="300" height="60" rx="12 12 0 0"></rect>
+            <rect id="Header-Line" fill="#F0F0F0" x="0" y="59" width="300" height="1"></rect>
+            
+            <!-- Laravel Logo -->
+            <g id="Laravel-Logo" transform="translate(20, 18)">
+                <path d="M24.0001,0 C37.2549,0 48.0001,10.7452 48.0001,24 C48.0001,37.2548 37.2549,48 24.0001,48 C10.7453,48 0.000100017934,37.2548 0.000100017934,24 C0.000100017934,10.7452 10.7453,0 24.0001,0 Z" id="Logo-Background" fill="url(#linearGradient-1)"></path>
+                <path d="M33.8414,15.5771 L33.8394,15.5791 L24.0004,35.9991 L31.9414,15.5771 L33.8414,15.5771 Z M14.1584,15.5771 L22.0994,35.9991 L12.2604,15.5771 L14.1584,15.5771 Z M14.9414,12.0001 L23.9994,12.0001 L19.4704,12.0001 L14.9414,12.0001 Z M28.5294,12.0001 L33.0584,12.0001 L24.0004,12.0001 L28.5294,12.0001 Z M24.0004,16.0001 L19.0004,29.0001 L28.9994,29.0001 L24.0004,16.0001 Z" id="Laravel-L" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+            
+            <text id="Deal-Title" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="bold" fill="#333333">
+                <tspan x="80" y="30">Laravel Course Bundle</tspan>
+            </text>
+            <text id="Deal-Subtitle" font-family="ArialMT, Arial" font-size="12" font-weight="normal" fill="#666666">
+                <tspan x="80" y="48">Complete Laravel Mastery</tspan>
+            </text>
+            
+            <!-- Deal Image -->
+            <rect id="Deal-Image" fill="#F5F5F5" x="20" y="80" width="260" height="120" rx="4"></rect>
+            <g id="Image-Icon" transform="translate(130, 120)">
+                <path d="M40,0 C42.2091,0 44,1.79086 44,4 L44,36 C44,38.2091 42.2091,40 40,40 L4,40 C1.79086,40 0,38.2091 0,36 L0,4 C0,1.79086 1.79086,0 4,0 L40,0 Z M40,4 L4,4 L4,36 L40,36 L40,4 Z" id="Frame" fill="#CCCCCC" fill-rule="nonzero"></path>
+                <circle id="Sun" fill="#CCCCCC" cx="12" cy="12" r="4"></circle>
+                <polygon id="Mountain" fill="#CCCCCC" points="4 32 16 16 28 32"></polygon>
+                <polygon id="Mountain-2" fill="#CCCCCC" points="20 24 32 8 44 24"></polygon>
+            </g>
+            
+            <!-- Deal Info -->
+            <text id="Original-Price" font-family="ArialMT, Arial" font-size="14" font-weight="normal" fill="#999999" text-decoration="line-through">
+                <tspan x="20" y="230">$199</tspan>
+            </text>
+            <text id="Sale-Price" font-family="Arial-BoldMT, Arial" font-size="24" font-weight="bold" fill="#FF2D20">
+                <tspan x="20" y="260">$49</tspan>
+            </text>
+            <text id="Discount" font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FF8A00">
+                <tspan x="80" y="260">75% OFF</tspan>
+            </text>
+            
+            <!-- Action Button -->
+            <rect id="Button-Background" fill="url(#linearGradient-1)" x="180" y="230" width="100" height="40" rx="6"></rect>
+            <text id="Button-Text" font-family="Arial-BoldMT, Arial" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+                <tspan x="230" y="255">Get Deal</tspan>
+            </text>
+        </g>
+        
+        <!-- Floating Deal Tags -->
+        <g id="Deal-Tag-1" transform="translate(150, 150)">
+            <rect fill="#FFFFFF" x="0" y="0" width="80" height="30" rx="15" filter="url(#filter-3)"></rect>
+            <text font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold" fill="#FF2D20" text-anchor="middle">
+                <tspan x="40" y="20">HOT DEAL</tspan>
+            </text>
+        </g>
+        
+        <g id="Deal-Tag-2" transform="translate(550, 200)">
+            <rect fill="#FFFFFF" x="0" y="0" width="100" height="30" rx="15" filter="url(#filter-3)"></rect>
+            <text font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold" fill="#FF8A00" text-anchor="middle">
+                <tspan x="50" y="20">BEST SELLER</tspan>
+            </text>
+        </g>
+        
+        <g id="Deal-Tag-3" transform="translate(180, 350)">
+            <rect fill="#FFFFFF" x="0" y="0" width="120" height="30" rx="15" filter="url(#filter-3)"></rect>
+            <text font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold" fill="#333333" text-anchor="middle">
+                <tspan x="60" y="20">LIMITED TIME</tspan>
+            </text>
+        </g>
+        
+        <!-- Upvote Icons -->
+        <g id="Upvote-1" transform="translate(580, 300)">
+            <circle fill="#FFFFFF" cx="25" cy="25" r="25" filter="url(#filter-3)"></circle>
+            <path d="M25,15 L35,30 L15,30 L25,15 Z" fill="url(#linearGradient-1)"></path>
+            <text font-family="Arial-BoldMT, Arial" font-size="12" font-weight="bold" fill="#333333" text-anchor="middle">
+                <tspan x="25" y="42">128</tspan>
+            </text>
+        </g>
+        
+        <g id="Upvote-2" transform="translate(100, 250)">
+            <circle fill="#FFFFFF" cx="20" cy="20" r="20" filter="url(#filter-3)"></circle>
+            <path d="M20,12 L28,24 L12,24 L20,12 Z" fill="url(#linearGradient-1)"></path>
+            <text font-family="Arial-BoldMT, Arial" font-size="10" font-weight="bold" fill="#333333" text-anchor="middle">
+                <tspan x="20" y="34">64</tspan>
+            </text>
+        </g>
+        
+        <!-- Decorative Elements -->
+        <path d="M700,300 C720,280 740,290 760,270" stroke="#FF8A00" stroke-width="2" stroke-dasharray="4,4"></path>
+        <path d="M40,200 C60,180 80,190 100,170" stroke="#FF2D20" stroke-width="2" stroke-dasharray="4,4"></path>
+        
+        <!-- Stars -->
+        <g id="Star-1" transform="translate(650, 350)">
+            <path d="M10,0 L13.09,6.58 L20,7.24 L14.95,12.07 L16.18,19 L10,15.77 L3.82,19 L5.05,12.07 L0,7.24 L6.91,6.58 L10,0 Z" fill="#FF8A00"></path>
+        </g>
+        <g id="Star-2" transform="translate(200, 100)">
+            <path d="M8,0 L10.47,5.27 L16,5.8 L11.96,9.65 L12.94,15.2 L8,12.61 L3.06,15.2 L4.04,9.65 L0,5.8 L5.53,5.27 L8,0 Z" fill="#FF2D20"></path>
+        </g>
+        <g id="Star-3" transform="translate(500, 80)">
+            <path d="M6,0 L7.85,3.95 L12,4.35 L8.97,7.24 L9.71,11.4 L6,9.46 L2.29,11.4 L3.03,7.24 L0,4.35 L4.15,3.95 L6,0 Z" fill="#FF8A00"></path>
+        </g>
+    </g>
+</svg>
