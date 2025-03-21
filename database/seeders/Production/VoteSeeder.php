@@ -16,7 +16,7 @@ class VoteSeeder extends Seeder
     {
         // Get all published deals
         $deals = Deal::published()->get();
-        
+
         // Predefined IP addresses for anonymous votes
         $ipAddresses = [
             '192.168.1.1', '192.168.1.2', '192.168.1.3', '192.168.1.4', '192.168.1.5',
@@ -26,7 +26,7 @@ class VoteSeeder extends Seeder
             '192.168.1.21', '192.168.1.22', '192.168.1.23', '192.168.1.24', '192.168.1.25',
             '192.168.1.26', '192.168.1.27', '192.168.1.28', '192.168.1.29', '192.168.1.30',
         ];
-        
+
         // Vote distribution for each deal
         $voteDistribution = [
             // Featured deals should have more votes
@@ -35,7 +35,7 @@ class VoteSeeder extends Seeder
             'Laracasts Annual Subscription - 25% Off' => 30,
             'Tailwind UI - 15% Discount for New Users' => 22,
             'Laravel Spark - 20% Off Lifetime License' => 26,
-            
+
             // Regular deals have fewer votes
             'Digital Ocean - $100 Credit for New Users' => 18,
             'Laravel News Pro - 10% Off Annual Subscription' => 15,
@@ -43,12 +43,12 @@ class VoteSeeder extends Seeder
             'Laravel Shift - 20% Off Bundle' => 14,
             'Mailcoach - 25% Off First Year' => 16,
         ];
-        
+
         // Process each deal
         foreach ($deals as $deal) {
             // Get the target vote count for this deal
             $targetVoteCount = $voteDistribution[$deal->title] ?? 10; // Default to 10 votes
-            
+
             // Create anonymous votes (weight = 1) - 60% of votes
             $anonymousVoteCount = ceil($targetVoteCount * 0.6);
             for ($i = 0; $i < $anonymousVoteCount && $i < count($ipAddresses); $i++) {
@@ -61,10 +61,10 @@ class VoteSeeder extends Seeder
                     'updated_at' => now(),
                 ]);
             }
-            
+
             // Get or create some users for authenticated votes
             $users = $this->getOrCreateUsers(5);
-            
+
             // Create logged-in user votes (weight = 2) - 30% of votes
             $loggedInVoteCount = ceil($targetVoteCount * 0.3);
             for ($i = 0; $i < $loggedInVoteCount && $i < count($users); $i++) {
@@ -77,11 +77,11 @@ class VoteSeeder extends Seeder
                     'updated_at' => now(),
                 ]);
             }
-            
+
             // Create verified developer votes (weight = 3) - 10% of votes
             $verifiedVoteCount = ceil($targetVoteCount * 0.1);
             $verifiedUsers = $this->getOrCreateVerifiedUsers(3);
-            
+
             for ($i = 0; $i < $verifiedVoteCount && $i < count($verifiedUsers); $i++) {
                 Vote::create([
                     'deal_id' => $deal->id,
@@ -92,13 +92,13 @@ class VoteSeeder extends Seeder
                     'updated_at' => now(),
                 ]);
             }
-            
+
             // Update the deal's vote_count based on the votes' weights
             $totalWeight = Vote::where('deal_id', $deal->id)->sum('weight');
             $deal->update(['vote_count' => $totalWeight]);
         }
     }
-    
+
     /**
      * Get or create regular users for votes
      */
@@ -112,7 +112,7 @@ class VoteSeeder extends Seeder
             'user4@example.com',
             'user5@example.com',
         ];
-        
+
         foreach (array_slice($userEmails, 0, $count) as $email) {
             $users[] = User::firstOrCreate(
                 ['email' => $email],
@@ -123,10 +123,10 @@ class VoteSeeder extends Seeder
                 ]
             );
         }
-        
+
         return $users;
     }
-    
+
     /**
      * Get or create verified developer users for votes
      */
@@ -138,7 +138,7 @@ class VoteSeeder extends Seeder
             'developer2@example.com',
             'developer3@example.com',
         ];
-        
+
         foreach (array_slice($verifiedEmails, 0, $count) as $email) {
             $users[] = User::firstOrCreate(
                 ['email' => $email],
@@ -146,11 +146,10 @@ class VoteSeeder extends Seeder
                     'name' => 'Developer ' . substr($email, 9, 1),
                     'password' => bcrypt('password'),
                     'email_verified_at' => now(),
-                    'is_verified_developer' => true,
                 ]
             );
         }
-        
+
         return $users;
     }
 }
